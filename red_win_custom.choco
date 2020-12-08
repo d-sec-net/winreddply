@@ -63,8 +63,10 @@ git clone https://github.com/ZeroPointSecurity/Covenant C:\tools\rasta-coven-for
 git clone https://github.com/FuzzySecurity/StandIn C:\tools\AD-Standin
 git clone https://github.com/djhohnstein/SharpChromium C:\tools\SharpChromium
 git clone https://github.com/CCob/SharpBlock C:\tools\SharpBlock
-
-
+git clone https://github.com/Kevin-Robertson/InveighZero C:\tools\InveighZero
+git clone https://github.com/chrismaddalena/SharpCloud C:\tools\SharpCloud
+git clone https://github.com/djhohnstein/SharpShares C:\tools\SharpShares
+git clone https://github.com/Flangvik/BetterSafetyKatz C:\tools\BetterSafetyKatz
 
 # IE first run
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"
