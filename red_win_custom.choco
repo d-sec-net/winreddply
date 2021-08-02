@@ -68,6 +68,13 @@ git clone https://github.com/Kevin-Robertson/InveighZero C:\tools\InveighZero
 git clone https://github.com/chrismaddalena/SharpCloud C:\tools\SharpCloud
 git clone https://github.com/djhohnstein/SharpShares C:\tools\SharpShares
 git clone https://github.com/Flangvik/BetterSafetyKatz C:\tools\BetterSafetyKatz
+git clone https://github.com/topotam/PetitPotam C:\tools\PetitPotam
+git clone https://github.com/klezVirus/CheeseTools C:\tools\CheeseTools
+git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares
+git clone https://github.com/bohops/SharpRDPHijack C:\tools\SharpRDPHijack
+git clone https://github.com/Kevin-Robertson/Sharpmad C:\tools\SharpMad
+
+
 
 # IE first run
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"
@@ -75,7 +82,7 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" -Name DisableFirstRunCustomize -Value 1
 
 # BloodHound
-Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/latest/download/BloodHound-win32-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
+Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-win32-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
 Expand-Archive -Path "$env:TEMP\BloodHound.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\BloodHound-win32-x64\ -NewName BloodHound
 Invoke-WebRequest -Uri 'https://neo4j.com/artifact.php?name=neo4j-community-4.0.0-windows.zip' -OutFile "$env:TEMP\neo4j.zip"
@@ -96,6 +103,11 @@ Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
 
+# Enable PSRemoting
+Enable-PSRemoting -Force
+# The below does enable all hosts as trusted not for production use yada yada yada...
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
+
 # UI
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
 Set-WindowsExplorerOptions -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableExpandToOpenFolder -EnableShowRibbon
@@ -104,7 +116,7 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk"
 
 # Wallpaper
 New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/dmaristi/windply/main/images/a_rt_wallpaperv2.jpg' -OutFile "C:\DTop\wallpaper.jpg"
+Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
 # Misc
