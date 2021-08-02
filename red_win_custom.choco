@@ -28,7 +28,8 @@ choco install putty
 choco install OpenVPN
 choco install python3
 choco install nmap
-choco install docker-desktop
+choco install az.powershell
+
 choco install greenshot
 choco install microsoft-windows-terminal
 
@@ -94,7 +95,6 @@ Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
-
 
 # UI
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
