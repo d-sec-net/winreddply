@@ -1,5 +1,6 @@
 # windply
 
+Run the following as admin with powershell.
 
 Install boxstarter.
 
