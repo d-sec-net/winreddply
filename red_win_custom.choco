@@ -104,9 +104,9 @@ Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 Install-Module GPRegistryPolicy -Force
 
 # Enable PSRemoting
-Enable-PSRemoting -Force
+# Enable-PSRemoting -Force
 # The below does enable all hosts as trusted not for production use yada yada yada...
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
+# Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
 
 # UI
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
