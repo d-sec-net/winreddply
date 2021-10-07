@@ -73,7 +73,7 @@ git clone https://github.com/klezVirus/CheeseTools C:\tools\CheeseTools
 git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares
 git clone https://github.com/bohops/SharpRDPHijack C:\tools\SharpRDPHijack
 git clone https://github.com/Kevin-Robertson/Sharpmad C:\tools\SharpMad
-
+git clone https://github.com/GhostPack/Rubeus C:\tools\Rubeus
 
 
 # IE first run
