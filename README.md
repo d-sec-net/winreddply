@@ -17,3 +17,6 @@ Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/d-sec-n
 ### Docker issues
 Ensure you enable CPU guest Virtualistaion if this build is to be run as a virtual guest. Otherwise you will get starting issues.
  
+### Ready to roll!
+All tools are in c:\tools, some will need to be compiled others should work out the box.
+Keep an eye on that pesky Defender which will re-enable its self like a good AV should... the b4stard...
