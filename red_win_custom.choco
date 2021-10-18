@@ -115,9 +115,9 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\tools.lnk"
 Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk" -targetPath "C:\tools\Neo4j\bin\neo4j.bat" -arguments "console" -runAsAdmin
 
 # Wallpaper
-New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
-set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
+#New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
+#Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
+#set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
 # Misc
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
