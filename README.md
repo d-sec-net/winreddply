@@ -2,6 +2,8 @@
 
 Run the following as admin with powershell.
 
+Note: enure you have creds set for the logged on user otherwise the main bit will fail. 
+
 Install boxstarter.
 
 ```powershell
@@ -19,4 +21,6 @@ Ensure you enable CPU guest Virtualistaion if this build is to be run as a virtu
  
 ### Ready to roll!
 All tools are in c:\tools, some will need to be compiled others should work out the box.
+
 Keep an eye on that pesky Defender which will re-enable its self like a good AV should... the b4stard...
+
