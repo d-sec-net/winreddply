@@ -13,3 +13,7 @@ Download the redwin_deploy.choco script using the boxstarter cmd prompt and run 
 $Cred = Get-Credential $env:USERNAME
 Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/d-sec-net/winreddply/main/red_win_custom.choco -Credential $Cred 
 ```
+
+### Docker issues
+Ensure you enable CPU guest Virtualistaion if this build is to be run as a virtual guest. Otherwise you will get starting issues.
+ 
