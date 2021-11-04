@@ -1,4 +1,4 @@
-# windply
+# WinRTDplyOS
 
 Run the following as admin with powershell.
 
