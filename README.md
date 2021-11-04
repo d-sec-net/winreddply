@@ -1,4 +1,4 @@
-# WinRTDplyOS
+# WinRedOS
 
 Run the following as admin with powershell.
 
