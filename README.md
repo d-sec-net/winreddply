@@ -1,6 +1,6 @@
 # WinRedOS
 
-Run the following as admin with powershell.
+Run the following as admin with powershell. May need to do execution bypass. 
 
 Note: enure you have creds set for the logged on user otherwise the main bit will fail. 
 
