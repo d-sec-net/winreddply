@@ -24,8 +24,8 @@ Note: You will need to install docker manually.
 Compiling some projects error as there is a missing package, fix for the ones I've come across (grand total of 1!) is to update the nuget package sources with below:
 Visual Studio > Tools >> Nuget Package Manager > Package Manager settings > (window pops up) Find Package Manager sources: Add below
 
-   Name: nuget.org
-   Source: https://api.nuget.org/v3/index.json
+        Name: nuget.org
+        Source: https://api.nuget.org/v3/index.json
 
 
  
