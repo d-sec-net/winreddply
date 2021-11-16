@@ -20,6 +20,15 @@ Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/d-sec-n
 Ensure you enable CPU guest Virtualistaion if this build is to be run as a virtual guest. Otherwise you will get starting issues.
 Note: You will need to install docker manually.
  
+### misc
+Compiling some projects error as there is a missing package, fix for the ones I've come across (grand total of 1!) is to update the nuget package sources with below:
+Visual Studio > Tools >> Nuget Package Manager > Package Manager settings > (window pops up) Find Package Manager sources: Add below
+
+   Name: nuget.org
+   Source: https://api.nuget.org/v3/index.json
+
+
+ 
 ### Ready to roll!
 All tools are in c:\tools, some will need to be compiled others should work out the box.
 
