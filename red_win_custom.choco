@@ -32,6 +32,7 @@ choco install az.powershell
 
 choco install greenshot
 choco install microsoft-windows-terminal
+choco install sshfs
 
 # GitHub
 git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
