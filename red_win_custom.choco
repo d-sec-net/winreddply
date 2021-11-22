@@ -33,7 +33,6 @@ choco install az.powershell
 choco install greenshot
 choco install microsoft-windows-terminal
 choco install sshfs
-choco install docker-desktop
 
 # GitHub
 git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
@@ -103,8 +102,12 @@ Invoke-WebRequest -Uri 'https://download.microsoft.com/download/E/E/D/EEDF18A8-4
 Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 
 #Docker setup
-Invoke-WebRequest -Uri 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi' -OutFile "c:\Temp\wsl_update_x64.msi"
-Start-process "c:\Temp\wsl_update_x64.msi /quiet"
+Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
+Start-process "c:\Temp\Docker-Desktop.exe"
+
+#Invoke-WebRequest -Uri 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi' -OutFile "c:\Temp\wsl_update_x64.msi"
+#Start-process "c:\Temp\wsl_update_x64.msi /quiet"
+
 
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
