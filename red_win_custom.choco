@@ -30,6 +30,9 @@ choco install python3
 choco install nmap
 choco install az.powershell
 
+$env:TEMP = "C:\Temp"
+$env:TMP = "C:\Temp"
+
 choco install greenshot
 choco install microsoft-windows-terminal
 choco install sshfs
