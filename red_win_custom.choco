@@ -125,7 +125,11 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk"
 #Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
 #set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
-# Misc
+#Docker setup
+Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
+Start-process "c:\Temp\Docker-Desktop.exe"
+
+# Misc / Clean up
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
 Remove-Item -Path "C:\Users\Public\Desktop\Boxstarter Shell.lnk"
 Remove-Item -Path "$DesktopPath\eula.lnk"
@@ -133,6 +137,3 @@ Remove-Item -Path "C:\Users\Public\Desktop\Visual Studio Code.lnk"
 Remove-Item -Path "$DesktopPath\HeidiSQL.lnk"
 Remove-Item -Path C:\Temp\ -Recurse -Force
 
-#Docker setup
-Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
-Start-process "c:\Temp\Docker-Desktop.exe"
