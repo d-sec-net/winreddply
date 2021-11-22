@@ -129,8 +129,8 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk"
 #set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
 #Docker setup
-Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
-Start-process "c:\Temp\Docker-Desktop.exe"
+#Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
+#Start-process "c:\Temp\Docker-Desktop.exe"
 
 # Misc / Clean up
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
