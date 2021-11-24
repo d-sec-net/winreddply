@@ -15,29 +15,39 @@ Add-MpPreference -ExclusionPath $Downloads
 Set-MpPreference -MAPSReporting Disabled
 Set-MpPreference -SubmitSamplesConsent NeverSend
 
-# Packages
+#~~~~~~ Main Choco packages install ~~~~~
 choco feature enable -n allowGlobalConfirmation
-choco install git
-choco install vscode
-choco install openjdk11
+
+$ChocoPackages = @"
+git
+vscode
+openjdk11
+7zip
+putty
+OpenVPN
+python3
+nmap
+az.powershell
+greenshot
+microsoft-windows-terminal
+sshfs
+##Add more here##
+"@ -split "`n" | % { $_.trim() }
+
+foreach($pkg in $ChocoPackages){ 
+    choco install $pkg --cacheLocation C:\Temp
+        }
+
+#Special Choco Package vars
 choco install sysinternals --params "/InstallDir:C:\tools\sysinternals"
 choco install googlechrome --ignore-checksums
-choco install 7zip
 choco install heidisql --version=10.2.0.559900
-choco install putty
-choco install OpenVPN
-choco install python3
-choco install nmap
-choco install az.powershell
 
 
 #Work around for nested chocolatey issue
-$env:TEMP = "C:\Temp"
-$env:TMP = "C:\Temp"
+#$env:TEMP = "C:\Temp"
+#$env:TMP = "C:\Temp"
 
-choco install greenshot
-choco install microsoft-windows-terminal
-choco install sshfs
 
 # GitHub
 #git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
@@ -141,4 +151,3 @@ Remove-Item -Path "$DesktopPath\eula.lnk"
 Remove-Item -Path "C:\Users\Public\Desktop\Visual Studio Code.lnk"
 Remove-Item -Path "$DesktopPath\HeidiSQL.lnk"
 Remove-Item -Path C:\Temp\ -Recurse -Force
-
