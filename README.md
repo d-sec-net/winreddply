@@ -4,7 +4,8 @@ Run the following as admin with powershell. May need to do execution bypass.
 
 Note: enure you have creds set for the logged on user otherwise the main bit will fail. 
 
-1. Install boxstarter.
+####Process (All in elevated powershell with bypass)
+1. Install boxstarter. 
 
 ```powershell
 . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
