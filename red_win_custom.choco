@@ -30,6 +30,8 @@ choco install python3
 choco install nmap
 choco install az.powershell
 
+
+#Work around for nested chocolatey issue
 $env:TEMP = "C:\Temp"
 $env:TMP = "C:\Temp"
 
