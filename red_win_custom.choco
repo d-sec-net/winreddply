@@ -19,7 +19,6 @@ Set-MpPreference -SubmitSamplesConsent NeverSend
 choco feature enable -n allowGlobalConfirmation
 
 $ChocoPackages = @"
-#### ~~~ Start of Choco Packages list ~~~ ###
 git
 vscode
 openjdk11
@@ -32,7 +31,6 @@ az.powershell
 greenshot
 microsoft-windows-terminal
 sshfs
-### ~~~ End of list. Add more here ~~~ ###
 "@ -split "`n" | % { $_.trim() }
 
 foreach($pkg in $ChocoPackages){ 
