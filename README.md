@@ -14,7 +14,11 @@ Note: enure you have creds set for the logged on user otherwise the main bit wil
 2. Download the redwin_deploy.choco script using the boxstarter cmd prompt and run it as admin on the windows system using the prompted for credentials.
 ```powershell
 $Cred = Get-Credential $env:USERNAME
-Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/grluk/WinRedOS/main/red_win_custom.choco -Credential $Cred 
+Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/d-sec-net/winreddply/main/red_win_custom.choco -Credential $Cred 
+#Dev version
+#Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/grluk/WinRedOS/main/red_win_custom.choco -Credential $Cred 
+
+
 ```
 
 ### Docker issues
