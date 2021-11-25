@@ -95,6 +95,10 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" -Name DisableFirstRunCustomize -Value 1
 
+#Reset temp Paths.
+$env:TEMP = "C:\Temp"
+$env:TMP = "C:\Temp"
+
 # BloodHound
 Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-win32-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
 Expand-Archive -Path "$env:TEMP\BloodHound.zip" -DestinationPath C:\tools\
