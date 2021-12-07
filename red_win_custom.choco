@@ -107,6 +107,11 @@ Invoke-WebRequest -Uri 'https://neo4j.com/artifact.php?name=neo4j-community-4.0.
 Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
+#Foca (Needs testing)
+Invoke-WebRequest -Uri 'https://github.com/ElevenPaths/FOCA/releases/download/v3.4.7.1/FOCA-v3.4.7.1.zip' -OutFile "$env:TEMP\Foca.zip"
+Expand-Archive -Path "$env:TEMP\foca.zip" -DestinationPath C:\tools\
+
+
 ## Visual Studio
 #$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
 #$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
