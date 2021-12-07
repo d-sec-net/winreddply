@@ -48,46 +48,46 @@ $env:TMP = "C:\Temp"
 
 
 # GitHub
-#git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
-#git clone https://github.com/dafthack/MailSniper.git C:\tools\MailSniper
-#git clone https://github.com/GhostPack/Seatbelt.git C:\tools\Seatbelt
-#git clone --branch dev https://github.com/PowerShellMafia/PowerSploit.git C:\tools\PowerSploit
-#git clone https://github.com/tevora-threat/SharpView.git C:\tools\SharpView
-#git clone https://github.com/rasta-mouse/Sherlock.git C:\tools\Sherlock
-#git clone https://github.com/rasta-mouse/Watson.git C:\tools\Watson
-#git clone https://github.com/hfiref0x/UACME.git C:\tools\UACME
-#git clone https://github.com/BloodHoundAD/SharpHound3.git C:\tools\SharpHound3
-#git clone https://github.com/TheWover/donut.git C:\tools\donut
-#git clone https://github.com/rasta-mouse/MiscTools.git C:\tools\MiscTools
-#git clone https://github.com/djhohnstein/SharpChrome.git C:\tools\SharpChrome
-#git clone https://github.com/FSecureLABS/SharpGPOAbuse.git C:\tools\SharpGPOAbuse
-#git clone https://github.com/NetSPI/PowerUpSQL.git C:\tools\PowerUpSQL
-#git clone https://github.com/decoder-it/juicy-potato.git C:\tools\juicy-potato
-#git clone https://github.com/HarmJ0y/DAMP.git C:\tools\DAMP
-#git clone https://github.com/gentilkiwi/mimikatz.git C:\tools\mimikatz
-#git clone https://github.com/p3nt4/PowerShdll.git C:\tools\PowerShdll
-#git clone https://github.com/FortyNorthSecurity/Egress-Assess.git C:\tools\Egress-Assess
-#git clone --recursive https://github.com/0xd4d/dnSpy.git C:\tools\dnSpy
-#git clone https://github.com/leechristensen/SpoolSample.git C:\tools\SpoolSample
-#git clone --recurse-submodules https://github.com/cobbr/Covenant C:\tools\Covenant
-#git clone https://github.com/rasta-mouse/ThreatCheck C:\tools\ThreatCheck
-#git clone https://github.com/SnaffCon/Snaffler C:\tools\Snaffler
-#git clone https://github.com/BloodHoundAD/AzureHound C:\tools\AzureHound
-#git clone https://github.com/fireeye/OfficePurge C:\tools\OfficePurge
-#git clone https://github.com/ZeroPointSecurity/Covenant C:\tools\rasta-coven-fork
-#git clone https://github.com/FuzzySecurity/StandIn C:\tools\AD-Standin
-#git clone https://github.com/djhohnstein/SharpChromium C:\tools\SharpChromium
-#git clone https://github.com/CCob/SharpBlock C:\tools\SharpBlock
-#git clone https://github.com/Kevin-Robertson/InveighZero C:\tools\InveighZero
-#git clone https://github.com/chrismaddalena/SharpCloud C:\tools\SharpCloud
-#git clone https://github.com/djhohnstein/SharpShares C:\tools\SharpShares
-#git clone https://github.com/Flangvik/BetterSafetyKatz C:\tools\BetterSafetyKatz
-#git clone https://github.com/topotam/PetitPotam C:\tools\PetitPotam
-#git clone https://github.com/klezVirus/CheeseTools C:\tools\CheeseTools
-#git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares2
-#git clone https://github.com/bohops/SharpRDPHijack C:\tools\SharpRDPHijack
-#git clone https://github.com/Kevin-Robertson/Sharpmad C:\tools\SharpMad
-#git clone https://github.com/GhostPack/Rubeus C:\tools\Rubeus
+git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
+git clone https://github.com/dafthack/MailSniper.git C:\tools\MailSniper
+git clone https://github.com/GhostPack/Seatbelt.git C:\tools\Seatbelt
+git clone --branch dev https://github.com/PowerShellMafia/PowerSploit.git C:\tools\PowerSploit
+git clone https://github.com/tevora-threat/SharpView.git C:\tools\SharpView
+git clone https://github.com/rasta-mouse/Sherlock.git C:\tools\Sherlock
+git clone https://github.com/rasta-mouse/Watson.git C:\tools\Watson
+git clone https://github.com/hfiref0x/UACME.git C:\tools\UACME
+git clone https://github.com/BloodHoundAD/SharpHound3.git C:\tools\SharpHound3
+git clone https://github.com/TheWover/donut.git C:\tools\donut
+git clone https://github.com/rasta-mouse/MiscTools.git C:\tools\MiscTools
+git clone https://github.com/djhohnstein/SharpChrome.git C:\tools\SharpChrome
+git clone https://github.com/FSecureLABS/SharpGPOAbuse.git C:\tools\SharpGPOAbuse
+git clone https://github.com/NetSPI/PowerUpSQL.git C:\tools\PowerUpSQL
+git clone https://github.com/decoder-it/juicy-potato.git C:\tools\juicy-potato
+git clone https://github.com/HarmJ0y/DAMP.git C:\tools\DAMP
+git clone https://github.com/gentilkiwi/mimikatz.git C:\tools\mimikatz
+git clone https://github.com/p3nt4/PowerShdll.git C:\tools\PowerShdll
+git clone https://github.com/FortyNorthSecurity/Egress-Assess.git C:\tools\Egress-Assess
+git clone --recursive https://github.com/0xd4d/dnSpy.git C:\tools\dnSpy
+git clone https://github.com/leechristensen/SpoolSample.git C:\tools\SpoolSample
+git clone --recurse-submodules https://github.com/cobbr/Covenant C:\tools\Covenant
+git clone https://github.com/rasta-mouse/ThreatCheck C:\tools\ThreatCheck
+git clone https://github.com/SnaffCon/Snaffler C:\tools\Snaffler
+git clone https://github.com/BloodHoundAD/AzureHound C:\tools\AzureHound
+git clone https://github.com/fireeye/OfficePurge C:\tools\OfficePurge
+git clone https://github.com/ZeroPointSecurity/Covenant C:\tools\rasta-coven-fork
+git clone https://github.com/FuzzySecurity/StandIn C:\tools\AD-Standin
+git clone https://github.com/djhohnstein/SharpChromium C:\tools\SharpChromium
+git clone https://github.com/CCob/SharpBlock C:\tools\SharpBlock
+git clone https://github.com/Kevin-Robertson/InveighZero C:\tools\InveighZero
+git clone https://github.com/chrismaddalena/SharpCloud C:\tools\SharpCloud
+git clone https://github.com/djhohnstein/SharpShares C:\tools\SharpShares
+git clone https://github.com/Flangvik/BetterSafetyKatz C:\tools\BetterSafetyKatz
+git clone https://github.com/topotam/PetitPotam C:\tools\PetitPotam
+git clone https://github.com/klezVirus/CheeseTools C:\tools\CheeseTools
+git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares2
+git clone https://github.com/bohops/SharpRDPHijack C:\tools\SharpRDPHijack
+git clone https://github.com/Kevin-Robertson/Sharpmad C:\tools\SharpMad
+git clone https://github.com/GhostPack/Rubeus C:\tools\Rubeus
 
 
 # IE first run
@@ -108,14 +108,14 @@ Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
 ## Visual Studio
-$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
-$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
-Invoke-WebRequest -Uri $url -OutFile "$Downloads\vs_Community.exe"
+#$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
+#$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
+#Invoke-WebRequest -Uri $url -OutFile "$Downloads\vs_Community.exe"
 #Start-Process -FilePath "$env:TEMP\vs_Community.exe" -ArgumentList "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --Passive" -Wait
-Invoke-WebRequest -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/0.9.6/vspackage' -OutFile "$Downloads\InstallerProjects.vsix"
-#Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q $env:TEMP\InstallerProjects.vsix" -Wait
+#Invoke-WebRequest -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/0.9.6/vspackage' -OutFile "$Downloads\InstallerProjects.vsix"
+##Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q $env:TEMP\InstallerProjects.vsix" -Wait
 Invoke-WebRequest -Uri 'https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe' -OutFile "$Downloads\BuildTools.exe"
-#Start-Process -FilePath "$env:TEMP\BuildTools.exe" -ArgumentList "/Passive" -Wait
+Start-Process -FilePath "$env:TEMP\BuildTools.exe" -ArgumentList "/Passive" -Wait
 Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 
 
