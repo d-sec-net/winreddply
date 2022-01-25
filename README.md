@@ -4,14 +4,20 @@ Run the following as admin with powershell. May need to do execution bypass.
 
 Note: enure you have creds set for the logged on user otherwise the main bit will fail. 
 
-####Process (All in elevated powershell with bypass)
-1. Install boxstarter. 
+**Run Everything in an elevated powershell terminal**
+
+1. Allow scripts to run on your new attack host. (This isnt reccomended on your daily windows host for obvs reasons.)
+```
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope LocalMachine
+```
+
+2. Install boxstarter. 
 
 ```powershell
 . { Invoke-WebRequest -useb https://boxstarter.org/bootstrapper.ps1 } | iex; Get-Boxstarter -Force
 ```
 
-2. Download the redwin_deploy.choco script using the boxstarter cmd prompt and run it as admin on the windows system using the prompted for credentials.
+3. Download the redwin_deploy.choco script using the boxstarter cmd prompt and run it as admin on the windows system using the prompted for credentials.
 ```powershell
 $Cred = Get-Credential $env:USERNAME
 Install-BoxstarterPackage -PackageName https://raw.githubusercontent.com/d-sec-net/winreddply/main/red_win_custom.choco -Credential $Cred 
