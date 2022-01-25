@@ -15,23 +15,37 @@ Add-MpPreference -ExclusionPath $Downloads
 Set-MpPreference -MAPSReporting Disabled
 Set-MpPreference -SubmitSamplesConsent NeverSend
 
-# Packages
+#~~~~~~ Main Choco packages install ~~~~~
 choco feature enable -n allowGlobalConfirmation
-choco install git
-choco install vscode
-choco install openjdk11
-choco install sysinternals --params "/InstallDir:C:\tools\sysinternals"
-choco install googlechrome --ignore-checksums
-choco install 7zip
-choco install heidisql --version=10.2.0.559900
-choco install putty
-choco install OpenVPN
-choco install python3
-choco install nmap
-choco install az.powershell
 
-choco install greenshot
-choco install microsoft-windows-terminal
+$ChocoPackages = @"
+git
+vscode
+openjdk11
+7zip
+putty
+OpenVPN
+python3
+nmap
+az.powershell
+greenshot
+microsoft-windows-terminal
+sshfs
+"@ -split "`n" | % { $_.trim() }
+
+foreach($pkg in $ChocoPackages){ 
+    choco install $pkg --cacheLocation C:\Temp
+        }
+
+#Special Choco Package vars
+choco install sysinternals --params "/InstallDir:C:\tools\sysinternals" --cacheLocation C:\Temp
+choco install googlechrome --ignore-checksums --cacheLocation C:\Temp
+choco install heidisql --version=10.2.0.559900 --cacheLocation C:\Temp
+
+#Work around for nested chocolatey issue, reset some things.
+$env:TEMP = "C:\Temp"
+$env:TMP = "C:\Temp"
+
 
 # GitHub
 git clone https://github.com/ZeroPointSecurity/PhishingTemplates.git C:\tools\PhishingTemplates
@@ -70,7 +84,7 @@ git clone https://github.com/djhohnstein/SharpShares C:\tools\SharpShares
 git clone https://github.com/Flangvik/BetterSafetyKatz C:\tools\BetterSafetyKatz
 git clone https://github.com/topotam/PetitPotam C:\tools\PetitPotam
 git clone https://github.com/klezVirus/CheeseTools C:\tools\CheeseTools
-git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares
+git clone https://github.com/mitchmoser/SharpShares C:\tools\SharpShares2
 git clone https://github.com/bohops/SharpRDPHijack C:\tools\SharpRDPHijack
 git clone https://github.com/Kevin-Robertson/Sharpmad C:\tools\SharpMad
 git clone https://github.com/GhostPack/Rubeus C:\tools\Rubeus
@@ -81,6 +95,10 @@ New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer"
 New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main"
 New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Internet Explorer\Main" -Name DisableFirstRunCustomize -Value 1
 
+#Reset temp Paths.
+$env:TEMP = "C:\Temp"
+$env:TMP = "C:\Temp"
+
 # BloodHound
 Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-win32-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
 Expand-Archive -Path "$env:TEMP\BloodHound.zip" -DestinationPath C:\tools\
@@ -89,16 +107,26 @@ Invoke-WebRequest -Uri 'https://neo4j.com/artifact.php?name=neo4j-community-4.0.
 Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
+#Foca (Needs testing)
+Invoke-WebRequest -Uri 'https://github.com/ElevenPaths/FOCA/releases/download/v3.4.7.1/FOCA-v3.4.7.1.zip' -OutFile "$env:TEMP\Foca.zip"
+Expand-Archive -Path "$env:TEMP\foca.zip" -DestinationPath C:\tools\
+
+
 ## Visual Studio
-$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
-$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
-Invoke-WebRequest -Uri $url -OutFile "$Downloads\vs_Community.exe"
+#$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
+#$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
+#Invoke-WebRequest -Uri $url -OutFile "$Downloads\vs_Community.exe"
 #Start-Process -FilePath "$env:TEMP\vs_Community.exe" -ArgumentList "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --Passive" -Wait
-Invoke-WebRequest -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/0.9.6/vspackage' -OutFile "$Downloads\InstallerProjects.vsix"
-#Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q $env:TEMP\InstallerProjects.vsix" -Wait
+#Invoke-WebRequest -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/0.9.6/vspackage' -OutFile "$Downloads\InstallerProjects.vsix"
+##Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q $env:TEMP\InstallerProjects.vsix" -Wait
 Invoke-WebRequest -Uri 'https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe' -OutFile "$Downloads\BuildTools.exe"
-#Start-Process -FilePath "$env:TEMP\BuildTools.exe" -ArgumentList "/Passive" -Wait
+Start-Process -FilePath "$env:TEMP\BuildTools.exe" -ArgumentList "/Passive" -Wait
 Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
+
+
+#Invoke-WebRequest -Uri 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi' -OutFile "c:\Temp\wsl_update_x64.msi"
+#Start-process "c:\Temp\wsl_update_x64.msi /quiet"
+
 
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
@@ -115,11 +143,15 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\tools.lnk"
 Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk" -targetPath "C:\tools\Neo4j\bin\neo4j.bat" -arguments "console" -runAsAdmin
 
 # Wallpaper
-New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
-Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
-set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
+#New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
+#Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
+#set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
 
-# Misc
+#Docker setup
+#Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
+#Start-process "c:\Temp\Docker-Desktop.exe"
+
+# Misc / Clean up
 $DesktopPath = [Environment]::GetFolderPath("Desktop")
 Remove-Item -Path "C:\Users\Public\Desktop\Boxstarter Shell.lnk"
 Remove-Item -Path "$DesktopPath\eula.lnk"
