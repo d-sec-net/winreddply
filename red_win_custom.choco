@@ -108,8 +108,8 @@ Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
 #Foca (Needs testing)
-Invoke-WebRequest -Uri 'https://github.com/ElevenPaths/FOCA/releases/download/v3.4.7.1/FOCA-v3.4.7.1.zip' -OutFile "$env:TEMP\Foca.zip"
-Expand-Archive -Path "$env:TEMP\foca.zip" -DestinationPath C:\tools\
+#Invoke-WebRequest -Uri 'https://github.com/ElevenPaths/FOCA/releases/download/v3.4.7.1/FOCA-v3.4.7.1.zip' -OutFile "$env:TEMP\Foca.zip"
+#Expand-Archive -Path "$env:TEMP\foca.zip" -DestinationPath C:\tools\
 
 
 ## Visual Studio
@@ -131,10 +131,10 @@ Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
 
-# Enable PSRemoting
-# Enable-PSRemoting -Force
+Enable PSRemoting
+Enable-PSRemoting -Force
 # The below does enable all hosts as trusted not for production use yada yada yada...
-# Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
+Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
 
 # UI
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
