@@ -100,38 +100,20 @@ $env:TEMP = "C:\Temp"
 $env:TMP = "C:\Temp"
 
 # BloodHound
-Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/download/4.0.3/BloodHound-win32-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
+Invoke-WebRequest -Uri 'https://github.com/BloodHoundAD/BloodHound/releases/download/4.2.0/BloodHound-darwin-x64.zip' -OutFile "$env:TEMP\BloodHound.zip"
 Expand-Archive -Path "$env:TEMP\BloodHound.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\BloodHound-win32-x64\ -NewName BloodHound
 Invoke-WebRequest -Uri 'https://neo4j.com/artifact.php?name=neo4j-community-4.0.0-windows.zip' -OutFile "$env:TEMP\neo4j.zip"
 Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
-#Foca (Needs testing)
-#Invoke-WebRequest -Uri 'https://github.com/ElevenPaths/FOCA/releases/download/v3.4.7.1/FOCA-v3.4.7.1.zip' -OutFile "$env:TEMP\Foca.zip"
-#Expand-Archive -Path "$env:TEMP\foca.zip" -DestinationPath C:\tools\
-
-
-## Visual Studio
-#$html = (New-Object Net.WebClient).DownloadString('https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16')
-#$url = [regex]::Match($html, '(https).*(vs_Community.exe)').Captures.Groups[0].Value
-#Invoke-WebRequest -Uri $url -OutFile "$Downloads\vs_Community.exe"
-#Start-Process -FilePath "$env:TEMP\vs_Community.exe" -ArgumentList "--add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --Passive" -Wait
-#Invoke-WebRequest -Uri 'https://marketplace.visualstudio.com/_apis/public/gallery/publishers/VisualStudioClient/vsextensions/MicrosoftVisualStudio2017InstallerProjects/0.9.6/vspackage' -OutFile "$Downloads\InstallerProjects.vsix"
-##Start-Process -FilePath "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\VSIXInstaller.exe" -ArgumentList "/q $env:TEMP\InstallerProjects.vsix" -Wait
-Invoke-WebRequest -Uri 'https://download.microsoft.com/download/E/E/D/EEDF18A8-4AED-4CE0-BEBE-70A83094FC5A/BuildTools_Full.exe' -OutFile "$Downloads\BuildTools.exe"
-Start-Process -FilePath "$env:TEMP\BuildTools.exe" -ArgumentList "/Passive" -Wait
-Enable-WindowsOptionalFeature -FeatureName NetFx3 -Online
-
-
-#Invoke-WebRequest -Uri 'https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi' -OutFile "c:\Temp\wsl_update_x64.msi"
-#Start-process "c:\Temp\wsl_update_x64.msi /quiet"
-
+#Install WSL (win11 Only)
+wsl --install
 
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
 
-Enable PSRemoting
+#Enable PSRemoting
 Enable-PSRemoting -Force
 # The below does enable all hosts as trusted not for production use yada yada yada...
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
