@@ -41,6 +41,9 @@ foreach($pkg in $ChocoPackages){
 choco install sysinternals --params "/InstallDir:C:\tools\sysinternals" --cacheLocation C:\Temp
 choco install googlechrome --ignore-checksums --cacheLocation C:\Temp
 choco install heidisql --version=10.2.0.559900 --cacheLocation C:\Temp
+choco install microsoft-windows-terminal --cacheLocation C:\Temp
+choco install processhacker --cacheLocation C:\Temp
+choco install windbg --cacheLocation C:\Temp
 
 #Work around for nested chocolatey issue, reset some things.
 $env:TEMP = "C:\Temp"
@@ -107,16 +110,17 @@ Invoke-WebRequest -Uri 'https://neo4j.com/artifact.php?name=neo4j-community-4.0.
 Expand-Archive -Path "$env:TEMP\neo4j.zip" -DestinationPath C:\tools\
 Rename-Item -Path C:\tools\neo4j-community-4.0.0\ -NewName Neo4j
 
+
 #Install WSL (win11 Only)
-wsl --install
+#wsl --install
 
 # GPRegistryPolicy
 Install-Module GPRegistryPolicy -Force
 
 #Enable PSRemoting
-Enable-PSRemoting -Force
+#Enable-PSRemoting -Force
 # The below does enable all hosts as trusted not for production use yada yada yada...
-Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
+#Set-Item WSMan:\localhost\Client\TrustedHosts -Value "*" -Force
 
 # UI
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1" -Force
