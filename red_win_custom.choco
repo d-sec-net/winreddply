@@ -130,8 +130,8 @@ Install-ChocolateyShortcut -shortcutFilePath "C:\Users\Public\Desktop\Neo4j.lnk"
 
 # Wallpaper
 #New-Item -Path C:\ -Name DTop -ItemType Directory -ErrorAction SilentlyContinue
-#Invoke-WebRequest -Uri 'https://i.imgur.com/DCwQDYu.jpg' -OutFile "C:\DTop\wallpaper.jpg"
-#set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.jpg
+#Invoke-WebRequest -Uri 'https://w.wallhaven.cc/full/o3/wallhaven-o3dw85.png' -OutFile "C:\DTop\wallpaper.png"
+#set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallPaper -value C:\DTop\wallpaper.png
 
 #Docker setup
 #Invoke-WebRequest -Uri 'https://desktop.docker.com/win/stable/amd64/Docker%20Desktop%20Installer.exe' -OutFile "c:\Temp\Docker-Desktop.exe"
