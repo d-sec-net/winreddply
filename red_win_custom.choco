@@ -41,7 +41,7 @@ foreach($pkg in $ChocoPackages){
 choco install sysinternals --params "/InstallDir:C:\tools\sysinternals" --cacheLocation C:\Temp
 choco install googlechrome --ignore-checksums --cacheLocation C:\Temp
 choco install heidisql --version=10.2.0.559900 --cacheLocation C:\Temp
-choco install microsoft-windows-terminal --cacheLocation C:\Temp
+#choco install microsoft-windows-terminal --cacheLocation C:\Temp (COMMENETED AS THIS IS DEFAULT ON WIN11)
 choco install processhacker --cacheLocation C:\Temp
 choco install windbg --cacheLocation C:\Temp
 
